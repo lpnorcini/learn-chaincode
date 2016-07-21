@@ -54,7 +54,7 @@ func (t *SimpleChaincode) Invoke(stub *shim.ChaincodeStub, function string, args
 	if function == "init" {													//initialize the chaincode state, used as reset
 		return t.Init(stub, "init", args)
 	}
-	fmt.Println("invoke did not find func: " + function)					//error
+	fmt.Println("Invoke did not find func: " + function)					//error
 
 	return nil, errors.New("Received unknown function invocation")
 }
@@ -68,7 +68,7 @@ func (t *SimpleChaincode) Query(stub *shim.ChaincodeStub, function string, args 
 		fmt.Println("hi there " + function)						//error
 		return nil, nil;
 	}
-	fmt.Println("query did not find func: " + function)						//error
+	fmt.Println("Query did not find func: " + function)						//error
 
 	return nil, errors.New("Received unknown function query")
 }
